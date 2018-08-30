@@ -20,7 +20,7 @@ a:active {
 
 .page-container {
     margin: 10px;
-    padding: 10px;
+    padding: 10px 10px 30px;
     font-family: sans-serif;
     background-color: blanchedalmond;
     -webkit-box-shadow: 3px 4px 5px 0px rgba(148,148,148,1);
@@ -61,6 +61,7 @@ a:active {
     box-shadow: 3px 4px 5px 0px rgba(148,148,148,1);
     border-radius: 5px;
     padding: 10px;
+    margin-left: 10px;
 }
 
 .item-list {

@@ -34,7 +34,7 @@ class Login extends Component {
     }
 
     this.setState({ error: '' });
-
+    console.log(`${api.url}admins?name=${this.state.username}&password=${this.state.password}`);
     const that=this;
     axios.get(`${api.url}admins?name=${this.state.username}&password=${this.state.password}`)
       .then(function (response) {
