@@ -45,6 +45,17 @@ class ListItem extends Component {
     }
   };
 
+  exportPDF = () => {
+    axios.get(`${api.url}${this.props.match.params.list}/report`, {
+    })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+  };
+
   render() {
     const listItems = this.state.data.map((item) =>
       <li className='item-list__item' key={item.id.toString()}>
@@ -80,6 +91,9 @@ class ListItem extends Component {
               <ul className='item-list'>
                 {listItems}
               </ul>
+              <button onClick={this.exportPDF}>
+                Export PDF
+              </button>
             </div>
           ) :
           <Redirect to='/login' />

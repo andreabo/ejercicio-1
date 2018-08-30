@@ -22,6 +22,14 @@
   font-size: large;
 }
 
+.logout-button {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 60px;
+  height: 20px;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

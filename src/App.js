@@ -23,7 +23,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <button onClick={() => this.logIn(0)}>Log Out</button>
+        <button className={'logout-button'} onClick={() => this.logIn(0)}>Log Out</button>
         <LoginContext.Provider value={{loggedIn: this.state.loggedIn, login: this.logIn}}>
           <BrowserRouter>
             <div>
