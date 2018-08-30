@@ -9,7 +9,7 @@ import { api } from '../api'
 class ListItem extends Component {
   constructor(props) {
     super(props);
-    this.state = {category: '', data: []};
+    this.state = {category: '', data: [], downloadPDF: false};
   }
 
   componentDidMount() {
@@ -46,14 +46,15 @@ class ListItem extends Component {
   };
 
   exportPDF = () => {
-    axios.get(`${api.url}${this.props.match.params.list}/report`, {
-    })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
+    // axios.get(`${api.url}${this.props.match.params.list}/report`, {
+    // })
+    //   .then(function (response) {
+    //     console.log(response);
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   })
+    this.setState({downloadPDF: true});
   };
 
   render() {
@@ -91,9 +92,15 @@ class ListItem extends Component {
               <ul className='item-list'>
                 {listItems}
               </ul>
-              <button onClick={this.exportPDF}>
-                Export PDF
-              </button>
+              <br/>
+              <Link
+                className='button'
+                to={`${api.url}${this.props.match.params.list}/report`}
+                target="_blank"
+                onClick={(event) => {event.preventDefault(); window.open(`${api.url}${this.props.match.params.list}/report`);}}
+              >
+                Download PDF
+              </Link>
             </div>
           ) :
           <Redirect to='/login' />
